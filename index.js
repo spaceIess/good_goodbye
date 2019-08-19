@@ -5,9 +5,9 @@ class GoodGoodbye {
     this.setGoodByes()
   }
 
-  setGoodByes = () => window.addEventListener("beforeunload", e => this.executeCallbacks(e))
+  setGoodByes() { window.addEventListener("beforeunload", e => this.executeCallbacks(e)) }
 
-  executeCallbacks = e => {
+  executeCallbacks(e) {
     let result
 
     Object.keys(this.callbacks).forEach(name => {
@@ -21,19 +21,17 @@ class GoodGoodbye {
     }
   }
 
-  set = (name, callback) => {
+  set(name, callback) {
     if (this.callbacks[name]) return `Func "${name}" is already used`
 
     this.callbacks[name] = callback
     return this.callbacks[name]
   }
 
-  unset = name => delete this.callbacks[name]
+  unset(name) { delete this.callbacks[name] }
 
-  unsetAll = () => {
-    Object.keys(this.callbacks).forEach(this.remove)
-    this.setPrompt(false)
-
+  unsetAll() {
+    this.callbacks = {}
     return this.callbacks
   }
 }

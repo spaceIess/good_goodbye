@@ -1,19 +1,32 @@
 {
   "name": "good-goodbye",
-  "version": "0.0.1",
+  "version": "0.0.10",
   "description": "Easy way to determine beforeunload callbacks",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc mocha -r jsdom-global/register"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spaceIess/good_goodbye.git"
   },
+  "keywords": [
+    "beforeunload",
+    "unload callbacks"
+  ],
   "author": "spaceless",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/spaceIess/good_goodbye/issues"
   },
-  "homepage": "https://github.com/spaceIess/good_goodbye#readme"
+  "homepage": "https://github.com/spaceIess/good_goodbye#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.17.1",
+    "chai": "^4.2.0",
+    "jsdom": "15.1.1",
+    "jsdom-global": "3.0.2",
+    "mocha": "^6.2.0",
+    "sinon": "^7.4.1"
+  }
 }
